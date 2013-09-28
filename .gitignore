@@ -1,7 +1,7 @@
 ./Web/*.suo
 ./Web/*.sln.docstates
-./Web/packages/*
+./Web/packages/
 ./Web/Web/*.user
 
-./Web/Web/obj/*
+./Web/Web/obj/
 ./Web/Web/bin/*.pdb
