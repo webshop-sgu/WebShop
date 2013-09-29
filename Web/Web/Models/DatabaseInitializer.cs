@@ -32,6 +32,13 @@ namespace Web.Models
             };
             users.ForEach(u => context.Users.Add(u));
             context.SaveChanges();
+            var products = new List<Product>
+            {
+                new Product{Name="Product1"},
+                new Product{Name="Product2"}
+            };
+            products.ForEach(p=>context.Products.Add(p));
+            context.SaveChanges();
         }
     }
 }
