@@ -17,6 +17,7 @@ namespace Web.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.ShowSearchBox = true;
             return View();
         }
 

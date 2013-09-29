@@ -1,0 +1,127 @@
+﻿@user_bar_height: 30px;
+@user_bar_padding: 10px;
+
+@content_width: 1000px;
+@shadow_color: rgb(200, 200, 200);
+
+@nav_width: 150px;
+@slide_height: 150px;
+@search_box_height: 70px;
+
+@footer_height: 30px;
+@footer_radius: 5px;
+
+body, html {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-image: url("/Content/images/theme/bg.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
+
+    #user-bar {
+        position: fixed;
+        height: @user_bar_height;
+        background-color: yellow;
+        width: 100%;
+        left: 0px;
+        min-width: @content_width;
+        box-shadow: 0 4px 2px -2px @shadow_color;
+        -moz-box-shadow: 0 4px 2px -2px @shadow_color;
+        -webkit-box-shadow: 0 4px 2px -2px @shadow_color;
+        z-index: 999;
+
+        #wrapper {
+            width: @content_width;
+            margin: 0px auto;
+
+            span {
+                float: left;
+                line-height: @user_bar_height;
+            }
+
+            a {
+                float: right;
+                padding: 0px 0px 0px 10px;
+                text-decoration: none;
+                line-height: @user_bar_height;
+            }
+        }
+    }
+
+    #container {
+        background-color: white;
+        width: @content_width;
+        margin: 0px auto;
+        padding: 0px;
+        border-bottom-left-radius: @footer_radius;
+        border-bottom-right-radius: @footer_radius;
+        box-shadow: 0px 0px 10px 0px @shadow_color;
+        -moz-box-shadow: 0px 0px 10px 0px @shadow_color;
+        -webkit-box-shadow: 0px 0px 10px 0px @shadow_color;
+
+        header {
+            width: inherit;
+            padding-top: @user_bar_height;
+
+            nav {
+                padding: @user_bar_padding 0px 0px 0px;
+                margin: 0px;
+                background-color: lightgreen;
+                width: @nav_width;
+                float: left;
+                height: @slide_height;
+
+                ul {
+                    padding: 0px;
+                    margin: 0px;
+                    list-style: none;
+
+                    li {
+                        padding-left: 5px;
+                        padding-bottom: 5px;
+                        width: 100%;
+                        box-sizing: border-box;
+                        -moz-box-sizing: border-box;
+                        transition-duration: 0.8s;
+                        -webkit-transition-duration: 0.8s;
+
+                        a {
+                            text-decoration: none;
+                        }
+                    }
+
+                        li:hover {
+                            background-color: yellow;
+                        }
+                }
+            }
+
+            #main-silde {
+                padding: @user_bar_padding 0px 0px 0px;
+                margin-left: @nav_width;
+                width: (@content_width - @nav_width);
+                height: @slide_height;
+                background-color: lightcyan;
+            }
+
+            #search-box {
+                height: @search_box_height;
+                background-color: lime;
+            }
+        }
+    }
+
+    footer {
+        width: inherit;
+        margin-bottom: 20px;
+        background-color: lightpink;
+        height: @footer_height;
+        text-align: center;
+        line-height: @footer_height;
+        border-bottom-left-radius: @footer_radius;
+        border-bottom-right-radius: @footer_radius;
+    }
+}
