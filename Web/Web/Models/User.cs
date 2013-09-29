@@ -7,7 +7,6 @@ using System.Web;
 
 namespace Web.Models
 {
-    [Table("Users")]
     public class User
     {
         [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -30,7 +29,6 @@ namespace Web.Models
         public string Email { get; set; }
 
         public int RoleId { get; set; }
-
         public virtual Role Role { get; set; }
     }
 }

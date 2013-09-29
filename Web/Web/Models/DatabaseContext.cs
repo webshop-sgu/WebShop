@@ -6,9 +6,9 @@ using System.Web;
 
 namespace Web.Models
 {
-    public class Database : DbContext
+    public class DatabaseContext : DbContext
     {
-        public Database()
+        public DatabaseContext()
             : base("WebstoreDbConnectionString")
         {
         }

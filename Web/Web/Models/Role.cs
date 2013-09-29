@@ -7,7 +7,6 @@ using System.Web;
 
 namespace Web.Models
 {
-    [Table("Roles")]
     public class Role
     {
         public Role()
@@ -15,7 +14,7 @@ namespace Web.Models
             Users = new HashSet<User>();
         }
 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [StringLength(30)]
