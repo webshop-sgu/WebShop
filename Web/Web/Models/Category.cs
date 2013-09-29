@@ -7,15 +7,14 @@ using System.Web;
 
 namespace Web.Models
 {
-    public class Product
+    public class Category
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int Id {get; set;}
 
         [StringLength(250), Required]
-        public string Name{get;set;}
+        public string Name { get; set; }
 
-
-        public virtual Category Category { get; set; }
+        public virtual List<Product> Products { get; set; }
     }
 }

@@ -117,6 +117,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Product.cs" />
@@ -183,7 +184,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>17067</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:6368/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

@@ -17,5 +17,6 @@ namespace Web.Models
         public DbSet<Role> Roles { get; set; }
         public DbSet<Log> Logs { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
