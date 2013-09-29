@@ -9,6 +9,8 @@ namespace Web.Controllers
 {
     public class HomeController : Controller
     {
+        private Database db = new Database();
+
         public HomeController()
         {
         }

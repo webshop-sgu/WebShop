@@ -2,6 +2,9 @@ Web/*.suo
 Web/*.sln.docstates
 Web/packages/
 Web/Web/*.user
-
 Web/Web/obj/
 Web/Web/bin/*.pdb
+
+App/*.suo
+App/App/bin/
+App/App/obj/
