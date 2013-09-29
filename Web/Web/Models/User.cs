@@ -7,25 +7,30 @@ using System.Web;
 
 namespace Web.Models
 {
-    [Table("tblUsers")]
+    [Table("Users")]
     public class User
     {
-        [Key]
-        public int Userid { get; set; }
-
+        [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.None)]
         [StringLength(20)]
         public string Username { get; set; }
 
-        [StringLength(32)]
+        [StringLength(32), Required]
         public string Password { get; set; }
 
-        [StringLength(30)]
-        public string Realname { get; set; }
+        [StringLength(30), Required]
+        public string RealName { get; set; }
 
-        [StringLength(20)]
+        [Required]
+        public DateTime Birthday { get; set; }
+
+        [StringLength(20), Required]
         public string Tel { get; set; }
 
-        [StringLength(70)]
+        [StringLength(70), Required]
         public string Email { get; set; }
+
+        public int RoleId { get; set; }
+
+        public virtual Role Role { get; set; }
     }
 }
