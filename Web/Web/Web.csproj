@@ -121,6 +121,7 @@
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Property.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\DatabaseInitializer.cs" />
     <Compile Include="Models\User.cs" />

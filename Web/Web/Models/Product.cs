@@ -15,8 +15,21 @@ namespace Web.Models
         [StringLength(250), Required]
         public string Name { get; set; }
 
-        public string Desc { get; set; }
+        public string Description { get; set; }
+
+        [Range(1,1000)]
+        public int Warranty { get; set; }
+
+        [Range(1,1000000000)]
+        public decimal Price { get; set; }
+        
+        [StringLength(500)]
+        public decimal SaleOff { get; set; }
+
+        [StringLength(50)]
+        public string Color { get; set; }
 
         virtual public Category Category { get; set; }
+        virtual public Property Property { get;set;}
     }
 }
