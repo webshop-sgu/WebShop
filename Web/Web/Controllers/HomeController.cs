@@ -22,6 +22,7 @@ namespace Web.Controllers
             ViewBag.Roles = db.Roles.ToList();
             ViewBag.Users = db.Users.ToList();
             ViewBag.RoleAsManager = db.Roles.Where(r => r.Id == 2).First();
+
             return View();
         }
 
