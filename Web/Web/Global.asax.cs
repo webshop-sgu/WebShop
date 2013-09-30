@@ -16,7 +16,7 @@ namespace Web
     {
         protected void Application_Start()
         {
-            Database.SetInitializer<DatabaseContext>(new TestDataInitializer());
+            Database.SetInitializer<DatabaseContext>(new DatabaseInitializer());
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);

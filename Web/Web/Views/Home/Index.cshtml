@@ -4,9 +4,22 @@
 
 <p>Đây là trang chủ</p>
 
-@foreach (var r in Model)
+<p><strong>Roles in system</strong></p>
+@foreach (var r in ViewBag.Roles)
 {
     <p>@r.Id | @r.Name</p>
+}
+
+<p><strong>Users in system</strong></p>
+@foreach (var u in ViewBag.Users)
+{
+    <p>@u.Username | @u.Email | @u.Role.Name</p>
+}
+
+<p><strong>Managers in system</strong></p>
+@foreach (var u in ViewBag.RoleAsManager.Users)
+{
+    <p>@u.Username | @u.Email</p>
 }
 
 @for (var i = 0; i < 40; ++i)

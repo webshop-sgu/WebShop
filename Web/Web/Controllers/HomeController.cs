@@ -19,7 +19,10 @@ namespace Web.Controllers
         public ActionResult Index()
         {
             ViewBag.ShowSearchBox = true;
-            return View(db.Roles.ToList());
+            ViewBag.Roles = db.Roles.ToList();
+            ViewBag.Users = db.Users.ToList();
+            ViewBag.RoleAsManager = db.Roles.Where(r => r.Id == 2).First();
+            return View();
         }
 
         public ActionResult About()
