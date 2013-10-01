@@ -3,15 +3,43 @@
 <head>
     <title>@ViewBag.Title</title>
     <meta charset="utf-8" />
-    <link type="text/css" rel="stylesheet" href="/Content/css/style.less" media="all"  />
+    <link type="text/css" rel="stylesheet" href="/Stylesheets/style.less" media="all"  />
+    <script type="text/javascript" src="/Scripts/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="/Scripts/scripts.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery("#btnLogin").click(function () {
+                if (!jQuery("#btnLogin").hasClass("activated")) {
+                    jQuery("#btnLogin").addClass("activated");
+                    jQuery("#login-box").slideToggle("fast");
+                } else {
+                    jQuery("#login-box").slideToggle("fast", function () {
+                        jQuery("#btnLogin").toggleClass("activated");
+                    });
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <div id="user-bar">
         <div id="wrapper">
             <span>Company logo</span>
-            <a href="">Đăng nhập</a> 
-            <a href="">Đăng kí</a> 
-            <a href="">Giỏ hàng</a> 
+            <ul>
+                <li><a href="">Đăng kí</a></li>
+                <li>
+                    <a id="btnLogin">Đăng nhập</a>
+                    <div id="login-box">
+                        <form>
+                            <input id="login-username" type="text" value="" placeholder="email hoặc tên đăng nhập" />
+                            <input id="login-password" type="password" value="" placeholder="mật khẩu" />
+                            <input id="login-submit" type="submit" value="Đăng nhập" />
+                            <label><input type="checkbox" />Ghi nhớ?</label>
+                        </form>
+                    </div>
+                </li>
+                <li><a href="">Giỏ hàng</a></li>
+            </ul>
         </div>
     </div>
 
@@ -19,9 +47,7 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="/">Trang chủ</a></li>
-                    <li><a href="">Tin tức</a></li>
-                    <li><a href="">Sản phẩm</a></li>
+                    <li><a class="activated" href="/">Trang chủ</a></li>
                     <li><a href="">Liên hệ</a></li>
                     <li>@Html.ActionLink("Giới thiệu", "About")</li>
                 </ul>
@@ -34,6 +60,15 @@
                 <div id="search-box">Search box</div>
             }
         </header>
+        <aside id="categories">
+            <ul>
+                <li><a href="#">Quạt điện</a></li>
+                <li><a href="#">Tủ lạnh</a></li>
+                <li><a href="#">Máy giặt</a></li>
+                <li><a href="#">Hút bụi</a></li>
+                <li><a href="#">Bếp từ</a></li>
+            </ul>
+        </aside>
         <div id="content">
             @RenderBody()
         </div>
