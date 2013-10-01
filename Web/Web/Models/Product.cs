@@ -9,13 +9,14 @@ namespace Web.Models
 {
     public class Product
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [StringLength(250), Required]
-        public string Name{get;set;}
+        public string Name { get; set; }
 
+        public string Desc { get; set; }
 
-        public virtual Category Category { get; set; }
+        virtual public Category Category { get; set; }
     }
 }

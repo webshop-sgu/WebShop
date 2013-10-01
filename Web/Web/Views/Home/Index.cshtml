@@ -22,22 +22,8 @@
     <p>@u.Username | @u.Email</p>
 }
 
-<p><strong>Categories and products</strong></p>
-<ul>
-@foreach (var cat in ViewBag.Categories)
+<p><strong>Administrator logs</strong></p>
+@foreach (var l in ViewBag.AdminLogs)
 {
-    <li><b>@cat.Name</b>
-        <ul>
-            @foreach (var product in cat.Products)
-            {
-                <li>@product.Name</li>
-            }
-        </ul>
-    </li>
+    <p>@l.Message</p>
 }
-</ul>
-@for (var i = 0; i < 40; ++i)
-{
-    <br />
-}
-

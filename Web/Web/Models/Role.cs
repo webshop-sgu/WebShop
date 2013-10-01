@@ -11,13 +11,13 @@ namespace Web.Models
     {
         public Role()
         {
-            Users = new HashSet<User>();
+            // Users = new HashSet<User>();
         }
 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [StringLength(30)]
+        [Required, StringLength(30)]
         public string Name { get; set; }
 
         public virtual ICollection<User> Users { get; set; }

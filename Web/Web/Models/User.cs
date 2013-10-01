@@ -9,7 +9,10 @@ namespace Web.Models
 {
     public class User
     {
-        [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int UserId { get; set; }
+
+        [Required]
         [StringLength(20)]
         public string Username { get; set; }
 
@@ -28,9 +31,11 @@ namespace Web.Models
         [StringLength(70), Required]
         public string Email { get; set; }
 
-        public int RoleId { get; set; }
+        [Required]
+        [ForeignKey("Role")]
+        public int RoleId { get; set; } 
 
         public virtual Role Role { get; set; }
-        public virtual IEnumerable<Log> Logs { get; set; }
+        public virtual ICollection<Log> Logs { get; set; }
     }
 }
