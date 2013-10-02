@@ -10,12 +10,13 @@
         jQuery(document).ready(function () {
             var categories_top = jQuery("#categories").offset().top;
             var user_bar_height = jQuery("#user-bar").height();
+            var menu_margin = 5;
 
             jQuery(window).scroll(function () {
                 var y = jQuery(window).scrollTop();
                 if (y > categories_top - user_bar_height) {
                     if (!jQuery("#categories").hasClass("fixed")) {
-                        jQuery("#categories").css("top", (user_bar_height + 2)+ 'px');
+                        jQuery("#categories").css("top", (user_bar_height + menu_margin) + 'px');
                         jQuery("#categories").addClass("fixed");
                     }
                 } else {

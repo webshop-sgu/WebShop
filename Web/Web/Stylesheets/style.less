@@ -30,7 +30,9 @@ body {
     #user-bar {
         position: fixed;
         height: @user_bar_height;
-        background-color: @user_bar_color;
+        background-image: url("../Images/Theme/bk_menu.gif");
+        background-repeat: repeat-x;
+        color: white;
         width: 100%;
         left: 0px;
         min-width: @content_width;
@@ -52,6 +54,7 @@ body {
             span {
                 float: left;
                 line-height: @user_bar_height;
+                font-weight: bold;
             }
 
             ul {
@@ -87,6 +90,7 @@ body {
                         line-height: 30px;
                         cursor: pointer;
                         border-radius: 5px;
+                        color: inherit;
                     }
 
                     @lime_green: rgb(191, 255, 0);
@@ -269,14 +273,16 @@ body {
             #categories {
                 float: left;
                 position: absolute;
-                border-top-left-radius: 7px;
+                /* border-top-left-radius: 7px;
                 border-top-right-radius: 7px;
-                border: 1px solid gray;
-                overflow: hidden;
+                border: 1px solid rgb(167, 215, 249);
+                overflow: hidden; */
+                border: 1px solid rgb(167, 215, 249);
                 width: @categories_width;
                 box-sizing: border-box;
                 -moz-box-sizing: border-box;
                 -webkit-box-sizing: border-box;
+                background-color: rgb(249, 249, 249);
 
                 * {
                     margin: 0px;
@@ -286,8 +292,11 @@ body {
                 p {
                     text-align: center;
                     font-weight: bold;
-                    background-color: lightgray;
-                    padding: 0px;
+                    background-image: url("../Images/Theme/bk-categories.png");
+                    background-repeat: repeat-x;
+                    color: white;
+                    height: 32px;
+                    line-height: 32px;
                     margin: 0px;
                 }
 
@@ -295,8 +304,8 @@ body {
                     list-style: none;
 
                     li {
-                        padding: 5px 5px;
-                        border-top: 1px solid gray;
+                        padding: 3px 5px;
+                        /* border-top: 1px solid rgb(170, 170, 170); */
 
                         a {
                             text-decoration: none;
@@ -317,6 +326,11 @@ body {
 
         #content {
             margin-left: @categories_width + (@categories_margin * 2);
+            background-color: rgb(251, 251, 251);
+            /* border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px; */
+            border-left: 1px solid rgb(204, 204, 204);
+            padding: 10px;
         }
 
         footer {

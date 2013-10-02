@@ -139,6 +139,8 @@
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Images\Theme\bg.png" />
+    <Content Include="Images\Theme\bk-categories.png" />
+    <Content Include="Images\Theme\bk_menu.gif" />
     <Content Include="Images\Theme\login-img.png" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
