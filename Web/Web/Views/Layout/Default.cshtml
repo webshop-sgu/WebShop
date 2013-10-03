@@ -8,6 +8,25 @@
     <script type="text/javascript" src="/Scripts/scripts.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function () {
+            var categories_top = jQuery("#categories").offset().top;
+            var user_bar_height = jQuery("#user-bar").height();
+            var menu_margin = 5;
+
+            jQuery(window).scroll(function () {
+                var y = jQuery(window).scrollTop();
+                if (y > categories_top - user_bar_height) {
+                    if (!jQuery("#categories").hasClass("fixed")) {
+                        jQuery("#categories").css("top", (user_bar_height + menu_margin) + 'px');
+                        jQuery("#categories").addClass("fixed");
+                    }
+                } else {
+                    if (jQuery("#categories").hasClass("fixed")) {
+                        jQuery("#categories").css("top", 0 + 'px');
+                        jQuery("#categories").removeClass("fixed");
+                    }
+                }
+            });
+
             jQuery("#btnLogin").click(function () {
                 if (!jQuery("#btnLogin").hasClass("activated")) {
                     jQuery("#btnLogin").addClass("activated");
@@ -60,15 +79,18 @@
                 <div id="search-box">Search box</div>
             }
         </header>
-        <aside id="categories">
-            <ul>
-                <li><a href="#">Quạt điện</a></li>
-                <li><a href="#">Tủ lạnh</a></li>
-                <li><a href="#">Máy giặt</a></li>
-                <li><a href="#">Hút bụi</a></li>
-                <li><a href="#">Bếp từ</a></li>
-            </ul>
-        </aside>
+        <div id="categories_wraper">
+            <aside id="categories">
+                <p>Danh mục</p>
+                <ul>
+                    <li><a href="#">Quạt điện</a></li>
+                    <li><a href="#">Tủ lạnh</a></li>
+                    <li><a href="#">Máy giặt</a></li>
+                    <li><a href="#">Hút bụi</a></li>
+                    <li><a href="#">Bếp từ</a></li>
+                </ul>
+            </aside>
+        </div>
         <div id="content">
             @RenderBody()
         </div>
