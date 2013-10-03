@@ -15,12 +15,13 @@ namespace Web.Models
         [StringLength(250), Required]
         public string Name { get; set; }
 
+        [StringLength(5000)]
         public string Description { get; set; }
 
-        [Range(1,1000)]
+        [Range(1,1000),Required]
         public int Warranty { get; set; }
 
-        [Range(1,1000000000)]
+        [Range(1,1000000000),Required]
         public decimal Price { get; set; }
         
         [StringLength(500)]

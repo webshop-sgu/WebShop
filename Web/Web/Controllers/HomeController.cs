@@ -23,7 +23,6 @@ namespace Web.Controllers
             ViewBag.Users = db.Users.ToList();
             ViewBag.RoleAsManager = db.Roles.Where(r => r.Name.Contains("Quản lí")).First();
             ViewBag.AdminLogs = db.Logs.Where(l => l.User.Role.Id == 1).ToList();
-
             return View();
         }
 
